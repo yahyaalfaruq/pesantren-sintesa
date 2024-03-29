@@ -1,0 +1,857 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700;6..12,800;6..12,1000&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  background-image: url(asset/bg-sintesa.png);
+  background-color: var(--yellow-bg);
+}
+
+:root {
+  --green-primary: #93b53d;
+  --yellow: #ffe47c;
+  --green-light: #e4ffa0;
+  --green-old: #deff8c;
+  --blue-egg: #06b1c7;
+  --blue-egg-2: #6ec1e4;
+  --grey: #f3ffff;
+  --blue-light: #e6ffff;
+  --green-button: #61ce70;
+  --red-primary: #d74028;
+  --red-bg: #fff1ef;
+  --red-light: #ffdfda;
+  --yellow-old: #f2c010;
+  --yellow-bg: #fffac3;
+  --yellow-header: #fffde6;
+  --white: #ffffff;
+
+  --text-heading: clamp(1.25rem, 1.25rem + 2.0833vw, 3.125rem);
+  --text-sub-heading: clamp(1.125rem, 1.125rem + 1.25vw, 2.25rem);
+  --text-title: clamp(0.875rem, 0.875rem + 0.1389vw, 1rem);
+  --text-para: clamp(0.875rem, 0.875rem + 0.2778vw, 1.125rem);
+  --text-span: clamp(0.75rem, 0.75rem + 0.1389vw, 0.875rem);
+}
+/* ===== Tampilan Mobile ===== */
+.container {
+  padding: 0px 20px;
+}
+
+.p {
+  color: var(--yellow-bg);
+}
+
+.wrap-las {
+  background-color: var(--grey);
+  margin-top: 20px;
+}
+
+/* Btn-Cta */
+.btncta {
+  background-color: var(--green-primary);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrap > h4 {
+  display: none;
+}
+
+section {
+  order: 3;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: "";
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: "";
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+.btncta > h3 {
+  color: var(--white);
+}
+
+.btncta > i {
+  padding-top: 3px;
+  color: var(--white);
+}
+
+.btncta > a {
+  text-decoration: none;
+  color: #f3ffff;
+}
+
+/* Hero */
+.container-hero {
+  padding-top: 20px;
+  padding-bottom: 0px;
+}
+
+.container .hero {
+  background-color: var(--yellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
+}
+
+.container .hero .teks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.container .hero .teks > h2 {
+  font-weight: 800;
+}
+
+/* Persiapan */
+.persiapan {
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.persiapan .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.persiapan .teks {
+  background-color: var(--green-primary);
+  padding: 20px;
+}
+
+.persiapan .teks > h2 {
+  color: var(--white);
+}
+
+.persiapan .syarat {
+  padding: 30px;
+  background-color: var(--green-light);
+}
+
+.persiapan .syarat .tekks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.persiapan .syarat > h2 {
+  color: var(--blue-egg);
+  font-weight: 800;
+  padding-bottom: 30px;
+}
+
+.persiapan .syarat i {
+  color: var(--blue-egg);
+  font-weight: 700;
+}
+
+.persiapan .dibawa {
+  padding: 10px 30px;
+  background-color: var(--green-old);
+}
+
+.persiapan .dibawa .tekks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+.persiapan .dibawa > h2 {
+  color: var(--blue-egg);
+  font-weight: 800;
+  padding-bottom: 30px;
+}
+
+.persiapan .dibawa i {
+  color: var(--blue-egg);
+  font-weight: 700;
+}
+
+.persiapan .wrap-persiapan {
+  background-color: var(--grey);
+}
+
+/* Beginner */
+.beginner {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.beginner .wrap-beginner {
+  background-color: var(--grey);
+}
+
+.beginner .wrap-teks .container {
+  background-color: var(--grey);
+}
+
+.beginner .container {
+  border-left: 2px solid var(--blue-egg);
+  border-right: 2px solid var(--blue-egg);
+  border-bottom: 2px solid var(--blue-egg);
+  padding: 30px;
+}
+
+.beginner .judul {
+  background-color: var(--blue-egg);
+  padding: 20px;
+}
+
+.beginner .judul > h2 {
+  color: var(--white);
+}
+
+.beginner .container .tekks > p {
+  font-size: var(--text-para);
+  padding-bottom: 20px;
+}
+
+.beginner .tekks > h4 {
+  padding-top: 20px;
+  font-size: var(--text-title);
+  padding-bottom: 20px;
+}
+
+.beginner .tekks > ol {
+  padding-left: 30px;
+  padding-bottom: 30px;
+}
+
+.beginner .card {
+  background-color: var(--blue-light);
+}
+
+.beginner .card div > h2 {
+  color: var(--blue-egg);
+  padding: 20px 0px;
+}
+
+.beginner .card div > p {
+  font-size: var(--text-para);
+  padding: 0px 0px 20px 0px;
+}
+
+.beginner .card div > p i {
+  color: var(--blue-egg);
+  font-weight: 700;
+}
+
+.beginner .container .an {
+  display: flex;
+  justify-content: center;
+}
+
+.beginner .container .an > a {
+  text-decoration: none;
+  background-color: var(--green-button);
+  color: var(--white);
+  padding: 13px 50px;
+  text-align: center;
+}
+
+.beginner .container .hr {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.beginner .container .hr > hr {
+  width: 50%;
+}
+
+/* Digital */
+.digital {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.digital .container {
+  border-left: 2px solid var(--red-primary);
+  border-right: 2px solid var(--red-primary);
+  border-bottom: 2px solid var(--red-primary);
+  padding: 30px;
+}
+
+.digital .judul {
+  background-color: var(--red-primary);
+  padding: 20px;
+}
+
+.digital .judul > h2 {
+  color: var(--white);
+}
+
+.digital .container .teks > p {
+  font-size: var(--text-para);
+  padding-bottom: 20px;
+}
+
+.digital .teks > h4 {
+  padding-top: 20px;
+  font-size: var(--text-title);
+  padding-bottom: 20px;
+}
+
+.digital .teks > ol {
+  padding-left: 30px;
+  padding-bottom: 30px;
+}
+
+.digital .card-2 {
+  background-color: var(--red-light);
+}
+
+.digital .card-2 div > h2 {
+  color: var(--blue-egg);
+  padding: 20px 0px;
+}
+
+.digital .card-2 div > p {
+  font-size: var(--text-para);
+  padding: 0px 0px 20px 0px;
+}
+
+.digital .card-2 div > p i {
+  color: var(--blue-egg);
+  font-weight: 700;
+}
+
+.digital .container .anc {
+  display: flex;
+  justify-content: center;
+}
+
+.digital .container .anc > a {
+  text-decoration: none;
+  background-color: var(--green-button);
+  color: var(--white);
+  padding: 13px 50px;
+  text-align: center;
+}
+
+.digital .container .hr {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.digital .container .hr > hr {
+  width: 50%;
+}
+
+.digital .wrap-teks .container {
+  background-color: var(--red-bg);
+}
+
+/* Advanse */
+.advense {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.advense .container {
+  border-left: 2px solid var(--yellow);
+  border-right: 2px solid var(--yellow);
+  border-bottom: 2px solid var(--yellow);
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.advense .judul {
+  background-color: var(--yellow-old);
+  padding: 20px;
+}
+
+.advense .judul > h2 {
+  color: var(--white);
+}
+
+.advense .teks > p {
+  font-size: var(--text-para);
+  padding-bottom: 20px;
+}
+
+.advense .teks > h4 {
+  padding-top: 20px;
+  font-size: var(--text-title);
+  padding-bottom: 20px;
+}
+
+.advense .teks > ol {
+  padding-left: 30px;
+  padding-bottom: 30px;
+}
+
+.advense .card-3 {
+  background-color: var(--yellow-bg);
+}
+
+.advense .card-3 div > h2 {
+  color: var(--blue-egg);
+  padding: 20px 0px;
+}
+
+.advense .card-3 div > p {
+  font-size: var(--text-para);
+  padding: 0px 0px 20px 0px;
+}
+
+.advense .card-3 div > p i {
+  color: var(--blue-egg);
+  font-weight: 700;
+}
+
+.advense .container .an {
+  padding: 13px 22px;
+  text-align: center;
+}
+
+.advense .container .an > a {
+  text-decoration: none;
+  background-color: var(--green-button);
+  padding: 13px 50px;
+  color: var(--white);
+}
+
+.advense .container .hr {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.advense .container .hr > hr {
+  width: 50%;
+}
+
+.advense .wrap-teks .container {
+  background-color: var(--yellow-header);
+}
+
+/* Footer */
+footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+footer .container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+footer .container .div .alamat > h3 {
+  padding-bottom: 20px;
+  font-size: var(--text-sub-heading);
+  font-weight: 800;
+}
+
+footer .container .div .alamat > p {
+  font-size: var(--text-para);
+}
+
+footer .container .span {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+footer .container > span {
+  font-size: var(--text-para);
+}
+
+footer .container span > a {
+  font-size: var(--text-para);
+  text-decoration: none;
+  color: var(--green-primary);
+}
+
+footer .container .div .hubungi {
+  padding-bottom: 20px;
+}
+
+footer .container .div .hubungi > h3 {
+  padding-bottom: 20px;
+  font-size: var(--text-sub-heading);
+  font-weight: 800;
+}
+
+footer .container .hubungi > p {
+  font-size: var(--text-para);
+}
+
+footer .container .hubungi p > a {
+  font-size: var(--text-para);
+  text-decoration: none;
+  color: var(--green-primary);
+}
+
+footer .container .div .gabung > h3 {
+  padding-bottom: 20px;
+  font-size: var(--text-sub-heading);
+  font-weight: 800;
+}
+
+footer .container .gabung > p {
+  font-size: var(--text-para);
+  color: var(--green-primary);
+}
+
+footer .mbti {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 40px;
+}
+
+footer .mbti p > strong {
+  color: var(--green-primary);
+}
+
+footer .container {
+  background-color: var(--grey);
+  padding: 20px;
+}
+
+@media screen {
+  .menu-button-container {
+    display: flex;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 45px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu li {
+    border: 1px solid #333;
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: var(--green-primary);
+  }
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid var(--green-primary);
+  }
+}
+
+/* Tampilan Ipad */
+@media (min-width: 768px) {
+  section {
+    visibility: hidden;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    background-image: url(asset/bg-sintesa.png);
+    background-color: var(--yellow-bg);
+  }
+
+  .wrap {
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .wrap .backround {
+    background-color: var(--white);
+  }
+
+  .container {
+    padding: 0px 20px;
+  }
+
+  .btncta {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    background-image: url(asset/bg-sintesa.png);
+    background-color: var(--yellow-bg);
+  }
+
+  .btncta > h3 {
+    color: black;
+    font-size: var(--text-sub-heading);
+    font-weight: 800;
+  }
+
+  .btncta > a i {
+    display: none;
+  }
+
+  .btncta > a {
+    display: none;
+  }
+
+  .wrap > h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--green-primary);
+    padding: 10px 0px;
+    color: var(--white);
+  }
+
+  .persiapan .div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .persiapan .div .syarat {
+    width: 50%;
+  }
+
+  .persiapan .div .dibawa {
+    width: 50%;
+    padding-top: 30px;
+  }
+
+  .beginner .card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .beginner .card > div {
+    width: 50%;
+  }
+
+  .digital .card-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .digital .card-2 > div {
+    width: 50%;
+  }
+
+  .advense .card-3 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .advense .judul > h2 {
+    font-size: var(--text-sub-heading);
+    color: var(--white);
+    background-color: var(--yellow-old);
+    width: 320px;
+  }
+
+  .advense .card-3 > div {
+    width: 50%;
+  }
+
+  footer .container .div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 5%;
+  }
+
+  footer .container .div > div {
+    width: 30%;
+  }
+}
+
+/* Tampilan Laptop */
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+  }
+
+  .wrap {
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 241px;
+  }
+
+  .wrap .backround {
+    background-color: var(--white);
+  }
+
+  .btncta {
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    background-color: var(--yellow-bg);
+  }
+
+  .btncta > h3 {
+    color: black;
+    font-size: var(--text-sub-heading);
+    font-weight: 800;
+  }
+
+  .btncta > a i {
+    display: none;
+  }
+
+  .btncta > a {
+    display: none;
+  }
+
+  .wrap > h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--green-primary);
+    padding: 10px 0px;
+    color: var(--white);
+  }
+
+  .persiapan .div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .persiapan .div .syarat {
+    width: 50%;
+  }
+
+  .persiapan .div .dibawa {
+    width: 50%;
+    padding-top: 30px;
+  }
+
+  .beginner .card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .beginner .card > div {
+    width: 50%;
+  }
+
+  .digital .card-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .digital .card-2 > div {
+    width: 50%;
+  }
+
+  .advense .card-3 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .advense .judul > h2 {
+    font-size: var(--text-sub-heading);
+    color: var(--white);
+    background-color: var(--yellow-old);
+    width: 320px;
+  }
+
+  .advense .card-3 > div {
+    width: 50%;
+  }
+
+  footer .container .div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 5%;
+  }
+
+  footer .container .div > div {
+    width: 30%;
+  }
+}
